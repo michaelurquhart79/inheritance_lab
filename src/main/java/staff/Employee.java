@@ -24,11 +24,21 @@ public abstract class Employee {
     }
 
     public double raiseSalary(double raise) {
-        this.salary = this.salary * (1 + raise);
-        return this.salary;
+        if(raise > 0.0) {
+            this.salary = this.salary * (1 + raise);
+            return this.salary;
+        } else {
+            return this.salary;
+        }
     }
 
     public double payBonus() {
         return (0.01 * this.salary);
+    }
+
+    public void setName(String name) {
+        if (name != null) {
+        this.name = name;
+        }
     }
 }
